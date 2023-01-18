@@ -1,0 +1,84 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: silver;
+    padding: 20px;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 750px;
+    margin: 0 auto;
+}
+
+input {
+    border: 2px solid teal;
+    font-size: 20px;
+    height: 40px;
+    width: 500px;
+    padding-left: 5px;
+}
+
+#crete_todo {
+    width: 200px;
+    height: 40px;
+    border: 2px solid teal;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 22px;
+}
+
+#todo_list {
+    margin: 0 auto;
+    width: 750px;
+}
+
+.block_text {
+    width: 100%;
+    border: 2px solid teal;
+    padding: 8px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    font-size: 28px;
+    font-family: "Franklin Gothic Heavy";
+}
+
+.delete_button {
+    width: 150px;
+    height: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+    background: darkred;
+    font-size: 20px;
+    border-radius: 20px;
+    color: white;
+}
+
+.edit_button {
+    width: 150px;
+    height: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+    background: yellow;
+    font-size: 20px;
+    border-radius: 20px;
+    color: white;
+}
+
+.buttons_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+}
