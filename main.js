@@ -1,8 +1,6 @@
 const input = document.querySelector('#input')
-const createBtn = document.querySelector('#create_todo')
+const createBtn = document.querySelector('#crete_todo')
 const todoList = document.querySelector('#todo_list')
-const divBns = document.createElement('div')
-  
 
 const createTodo = () => {
     if (input.value.trim() === '') {
@@ -17,19 +15,24 @@ const createTodo = () => {
         div.append(text)
         todoList.append(div)
     }
-    
+
     input.value = ''
 
 
 
 }
 
-const removeBtn = document.createElement('button')
-const editBtn = document.createElement('button')
-divBns.classList.add('buttons_div')
-removeBtn.classList.add('delete_button')
-editBtn.classList.add('edit_button')
-divBns.append(removeBtn, editBtn)
+const divTag = document.createElement("div")
+const deleteBtn = document.createElement("button")
+const editBtn = document.createElement("button")
+divTag.classList.add("buttons_div")
+deleteBtn.classList.add("delete_button")
+editBtn.classList.add("edit_button")
+divTag.append(deleteBtn, editBtn)
+document.body.appendChild(divTag)
+
+
+
 
 
 createBtn.addEventListener('click', createTodo)
