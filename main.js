@@ -1,6 +1,11 @@
 const input = document.querySelector('#input')
 const createBtn = document.querySelector('#crete_todo')
 const todoList = document.querySelector('#todo_list')
+const div = document.createElement('div')
+const text = document.createElement('h3')
+
+
+
 
 const createTodo = () => {
     if (input.value.trim() === '') {
@@ -22,18 +27,21 @@ const createTodo = () => {
 
 }
 
+
 const divTag = document.createElement("div")
 const deleteBtn = document.createElement("button")
 const editBtn = document.createElement("button")
 divTag.classList.add("buttons_div")
 deleteBtn.classList.add("delete_button")
+deleteBtn.textContent='Delete'
+editBtn.textContent='Edit'
 editBtn.classList.add("edit_button")
 divTag.append(deleteBtn, editBtn)
 document.body.appendChild(divTag)
 
+deleteBtn.addEventListener('click',()=>{
 
-
-
+})
 
 createBtn.addEventListener('click', createTodo)
 input.addEventListener('keydown', (event) => {
