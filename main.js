@@ -40,7 +40,7 @@ divTag.append(deleteBtn, editBtn)
 document.body.appendChild(divTag)
 
 deleteBtn.addEventListener('click',()=>{
-  text.remove()
+todoList.removeChild(todoList)
 })
 
 createBtn.addEventListener('click', createTodo)
