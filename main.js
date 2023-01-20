@@ -9,41 +9,55 @@ const text = document.createElement('h3')
 
 const createTodo = () => {
     if (input.value.trim() === '') {
-        input, value = ''
+        input.value = ''
         return false
     } else {
         const div = document.createElement('div')
         const text = document.createElement('h3')
+        const buttonsDiv = document.createElement('div')
+        const deleteButton = document.createElement('button')
+        const editButton = document.createElement('button')
+
         div.setAttribute('class', 'block_text')
-        text.setAttribute('class', 'text')
+        buttonsDiv.setAttribute('class', 'buttons_div')
+        deleteButton.setAttribute('class', 'delete_button')
+        editButton.setAttribute('class', 'edit_button')
+
         text.innerText = input.value
-        div.append(text)
+        deleteButton.innerText = 'delete'
+        editButton.innerText = 'edit'
+
         todoList.append(div)
+        buttonsDiv.append(deleteButton, editButton)
+        div.append(text, buttonsDiv)
+
+        deleteButton.onclick = () => {
+            div.remove()
+        }
+        editButton.onclick = () => {
+            let editText = prompt(`Edit: ${text.innerText}`).trim()
+            if (editText === "") {
+                alert("error")
+               
+            }else{
+                editText === '' ? text.innerText : text.innerText = editText
+            }
+        }
     }
 
     input.value = ''
 
 
 
+
+   
+
+
+   
 }
 
-
-const divTag = document.createElement("div")
-const deleteBtn = document.createElement("button")
-const editBtn = document.createElement("button")
-divTag.classList.add("buttons_div")
-deleteBtn.classList.add("delete_button")
-deleteBtn.textContent='Delete'
-editBtn.textContent='Edit'
-editBtn.classList.add("edit_button")
-divTag.append(deleteBtn, editBtn)
-document.body.appendChild(divTag)
-
-deleteBtn.addEventListener('click',()=>{
-todoList.removeChild(todoList)
-})
-
 createBtn.addEventListener('click', createTodo)
+
 input.addEventListener('keydown', (event) => {
     if (event.code === 'Enter') {
         createTodo()
