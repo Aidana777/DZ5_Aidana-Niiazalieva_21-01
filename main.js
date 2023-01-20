@@ -57,7 +57,6 @@ const createTodo = () => {
 }
 
 createBtn.addEventListener('click', createTodo)
-
 input.addEventListener('keydown', (event) => {
     if (event.code === 'Enter') {
         createTodo()
